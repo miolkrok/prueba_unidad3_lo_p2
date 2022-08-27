@@ -1,5 +1,8 @@
 package com.uce.edu.demo.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.uce.edu.demo.repository.IProductoRepository;
 import com.uce.edu.demo.repository.modelo.Producto;
+import com.uce.edu.demo.repository.modelo.ProductoDTO;
 
 @Service
 public class ProductoServiceImpl implements IProductoService {
@@ -45,5 +49,11 @@ public class ProductoServiceImpl implements IProductoService {
 	public Producto buscarConsultaStockCriteria(String codigoBarras, String nombre, Integer stock) {
 		// TODO Auto-generated method stub
 		return this.productoRepository.buscarConsultaStockCriteria(codigoBarras,nombre,stock);
+	}
+
+	@Override
+	public List<ProductoDTO> reporte(LocalDateTime fecha, String categoria, String cantidad) {
+		// TODO Auto-generated method stub
+		return this.productoRepository.reporte(fecha, categoria, cantidad);
 	}
 }

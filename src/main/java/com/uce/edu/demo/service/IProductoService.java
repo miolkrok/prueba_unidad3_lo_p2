@@ -1,6 +1,10 @@
 package com.uce.edu.demo.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import com.uce.edu.demo.repository.modelo.Producto;
+import com.uce.edu.demo.repository.modelo.ProductoDTO;
 
 public interface IProductoService {
 
@@ -15,5 +19,7 @@ public interface IProductoService {
 	public Producto buscarCodigoBarras(String codigo);
 	
 	public Producto buscarConsultaStockCriteria(String codigoBarras, String nombre, Integer stock);
+	
+	public List<ProductoDTO> reporte(LocalDateTime fecha, String categoria, String cantidad);
 
 }

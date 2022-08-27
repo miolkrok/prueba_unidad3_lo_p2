@@ -90,7 +90,7 @@ public class GestorSupermercadoServiceImpl implements IGestorSupermercadoService
 	@Transactional(value = TxType.NOT_SUPPORTED)
 	public void reporteVentas(LocalDateTime fechaVenta, String categoria, String cantidad) {
 		// TODO Auto-generated method stub
-		
+		this.productoService.reporte(fechaVenta, categoria, cantidad);
 	}
 
 
